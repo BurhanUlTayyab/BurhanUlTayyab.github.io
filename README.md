@@ -1,4 +1,12 @@
-## Welcome to GitHub Pages
+## Blog for Google Summer of Code 2018
+
+Google Summer of Code is a big platform for open source enthusiasts and programmers and fortunately I was one among many selected for the program. I received the following email from Google.
+
+Picture
+
+
+
+
 
 You can use the [editor on GitHub](https://github.com/BurhanUlTayyab/burhanultayyab.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
