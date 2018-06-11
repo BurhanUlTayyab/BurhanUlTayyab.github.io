@@ -70,6 +70,9 @@ Now, I’m ending the week 2 of Google Summer of Code for Red Hen Labs, I’ll b
 
 I had proposed Scrolling Ticker Algorithm (Early Fusion Recognition) as follows:
 
+![Screenshot](1.png)
+
+
 
 This algorithm checks for threshold and a stopper (which tells that a new news ticker has started), while taking in various inputs like ticker width, height, offset and speed, it then checks for threshold and if the ticker text is greater than that threshold (taken as 70), it appends that ticker to new ticker. With that we can easily detect different scrolling news with upto 90% accuracy. Nonetheless it also requires manual intervention because it takes various frames of same ticker and we have to manually specify which frame is most appropriate.
 
