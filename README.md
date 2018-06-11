@@ -101,7 +101,30 @@ Until then
 
 Cheers.
 
+## Week 3 — Google Summer of Code
 
+This is the end of week 3 for Google Summer of Code and I am writing what I have done. By the end of 2nd week, I have written the prototype for Scrolling Ticker Algorithm in Python. Now I have to rewrite it in C/C++ because of it’s integration in CCExtractor. So, I started researching on the OPENCV functions in C++.
 
+The functions for OPENCV in C++ are quite different from the ones in Python. In C++, we have to manually set a lot of parameters in order for a function to work, while Python handles that automatically. For Example, in Python, we do the Morphology Transformation as
+
+```markdown
+closing = cv2.morphologyEx(thresh1, cv2.MORPH_CLOSE, kernel)
+```
+while in C++ as
+
+```markdown
+int morph_size = 2;
+Mat element = getStructuringElement( MORPH_RECT, Size( 2*morph_size + 1, 2*morph_size+1 ), Point( morph_size, morph_size ) );
+```
+
+This makes the code re-writing a little bit complex, but it makes it more powerful.
+
+Finally, all the code was rewritten with a little change which was that only those contours were selected (after pre-processing and running scolling ticker algorithm) which had an area between 150 and 300. This ensures that only stoppers are detected of scrolling news.
+
+This is my work for week 3, I have done 1/3rd of my things I have proposed in my proposal (albeit, the second part of 1/3rd due to my mentor suggesting me to do it first). I have my exams during fourth week, so I will not do any work during fourth week. I’ll start the fifth week by integrating OCR into the Scrolling Ticker Algorithm.
+
+Till Then,
+
+Cheers
 
 
