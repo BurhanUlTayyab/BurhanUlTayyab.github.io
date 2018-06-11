@@ -1,6 +1,6 @@
-## Blog for Google Summer of Code 2018
+## Week 1 — Google Summer of Code 2018
 
-Google Summer of Code is a big platform for open source enthusiasts and programmers and fortunately I was one among many selected for the program. I received the following email from Google.
+Now the first week has started, I started to work on various aspects of the project. I started to research more on Scrolling Ticker Algorithm and also started did some other work which are as follows
 
 Picture
 
