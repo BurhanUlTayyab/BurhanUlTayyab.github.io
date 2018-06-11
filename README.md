@@ -86,6 +86,13 @@ where frame is the exact video frame, x1 = 100, y1 = 525, x2 = 715 and y2 = 550.
 
 After hardcoding the region and running the Scrolling Ticker Algorithm (Early Fusion), I got amazing results, some of which are
 
+![Result](2.jpeg)
+
+![Result](3.jpeg)
+
+![Result](4.jpeg)
+
+
 Since we are getting good results here, I’ll now rewrite the whole code in C as instructed to me by my mentor.
 
 So next week, I’ll start working on writing its C code and also on integrating Tesseract API with Leptonica in it.
