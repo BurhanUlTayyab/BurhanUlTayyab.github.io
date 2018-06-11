@@ -127,4 +127,6 @@ Till Then,
 
 Cheers
 
+## Google Summer of Code 2018 — Week 4
 
+I was unable to work during fourth week because of my exams. Because of that, I had already completed 1st part of my project (1/3rd of my proposal during third week). I'll now start working on integrating OCR into Scrolling Ticker Algorithm for Russian News.
