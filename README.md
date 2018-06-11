@@ -7,19 +7,6 @@ Every student working under Red Hen Labs is given a CWRU Account for High Perfor
 Our accounts had been made in a single day and also our credentials were given to login into CWRU cluster to work on.
 
 
-
-
-
-
-
-You can use the [editor on GitHub](https://github.com/BurhanUlTayyab/burhanultayyab.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
 ```markdown
 
 burhantwo@Burhan-Ubuntu:~$ ssh bxu22@redhen1.case.edu
@@ -28,32 +15,50 @@ bxu22@redhen1:~$ ssh bxu22@rider.case.edu
 Last login: Sat May 19 06:53:44 2018 from redhen1.cosi.cwru.edu
 [bxu22@hpc3 ~]$
 
-
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-Bulleted
-List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
+
+
 
 ### Problem and Installations
 To solve the scrolling ticker problem, I used a modification of early fusion algorithm, basically what an early fusion algorithm does is, it check for changes in a ticker and a stopping point (which tells that one news has been finished and other has been started), if the changes are above some threshold value, it appends the ticker to a blank ticker otherwise it lets it go, it is very simple but powerful algorithm which can easily detect the changes in a ticker with upto 90% accuracy, to do the early fusion algorithm, I started needed to install OPENCV which is an open source Computer Vision Library. I needed to install OPENCV from source rather than install its pip version because pip version doesn’t support Video processing, so what I did was
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-### Jekyll Themes
+```markdown
+wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
+unzip opencv.zip
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/BurhanUlTayyab/burhanultayyab.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+This downloads OPENCV 3.1.0 and unzips it
 
-### Support or Contact
+Next I did was,
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```markdown
+wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
+unzip opencv_contrib.zip
+```
+
+This downloads the extra modules associated with OPENCV 3.1.0 and unzips it. Next I installed Numpy
+
+```markdown
+pip install numpy
+```
+Finally, I installed OPENCV as
+
+```markdown
+cd ~/opencv-3.1.0/
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D CMAKE_INSTALL_PREFIX=/usr/local \
+-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules \
+-D BUILD_EXAMPLES=ON ..
+make -j3 
+sudo make install
+sudo ldconfig
+```
+
+Now as OPENCV is installed, I’ll start working on implementing Scrolling Ticker Algorithm (Early Fusion Recognition) next week
+
+Till Then
+
+Cheers!!!!
+
