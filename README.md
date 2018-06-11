@@ -71,4 +71,27 @@ Now, I’m ending the week 2 of Google Summer of Code for Red Hen Labs, I’ll b
 I had proposed Scrolling Ticker Algorithm (Early Fusion Recognition) as follows:
 
 
+This algorithm checks for threshold and a stopper (which tells that a new news ticker has started), while taking in various inputs like ticker width, height, offset and speed, it then checks for threshold and if the ticker text is greater than that threshold (taken as 70), it appends that ticker to new ticker. With that we can easily detect different scrolling news with upto 90% accuracy. Nonetheless it also requires manual intervention because it takes various frames of same ticker and we have to manually specify which frame is most appropriate.
+
+Since we don’t have the detector to detect Russian Text, I used the ticker co-ordinates to hard code the bounding box over the video region. I did so by
+
+```markdown
+cv2.rectangle(frame, (100, 525), (715, 550), (255,0,0), 2)
+```
+
+where frame is the exact video frame, x1 = 100, y1 = 525, x2 = 715 and y2 = 550.
+
+After hardcoding the region and running the Scrolling Ticker Algorithm (Early Fusion), I got amazing results, some of which are
+
+Since we are getting good results here, I’ll now rewrite the whole code in C as instructed to me by my mentor.
+
+So next week, I’ll start working on writing its C code and also on integrating Tesseract API with Leptonica in it.
+
+Until then
+
+Cheers.
+
+
+
+
 
