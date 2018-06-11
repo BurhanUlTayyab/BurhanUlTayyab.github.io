@@ -62,3 +62,13 @@ Till Then
 
 Cheers!!!!
 
+## Google Summer of Code 2018 — Week 2
+
+Now, I’m ending the week 2 of Google Summer of Code for Red Hen Labs, I’ll be writing my experiences and what I’ve done so far.
+
+### Scrolling Ticker Algorithm (Early Fusion Recognition):
+
+I had proposed Scrolling Ticker Algorithm (Early Fusion Recognition) as follows:
+
+
+
