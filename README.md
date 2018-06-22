@@ -130,3 +130,37 @@ Cheers
 ## Google Summer of Code 2018 — Week 4
 
 I was unable to work during fourth week because of my exams. Because of that, I had already completed 1st part of my project (1/3rd of my proposal during third week). I'll now start working on integrating OCR into Scrolling Ticker Algorithm for Russian News.
+
+## Google Summer of Code 2018 — Week 5
+
+This is the end of week 5 and I’m writing my progress of what I’ve done it. The next step told to me by mentor after finishing with Scrolling Ticker Algorithm was integration of Tesseract OCR with CCExtractor. Because CCExtractor is written in C, we have to use C API for Tesseract in order for it to run. Also Scrolling Ticker is primarily written in OPENCV while CCExtractor doesn’t have OPENCV support on it so we have to configure it in Leptonica.
+
+This week I configured C/C++ API of Tesseract and attached it with Scrolling Ticker Algorithm. Configuring C API was an easy task, we just had to adjust few libraries, and we had the working OCR for Russian Language.
+
+The following were the results of OCR on a script on Russian Language.
+
+![Result](6.png)
+
+```markdown
+самолету просто не хватило топлива чтобы долстсть до
+Иркутска. Ведь именно там он должен был дозаправиться.
+Либо вышла из строя система подачи топлива. Кстати,
+именно эта модификация ТУ-154М проектировалась так,
+чтобы в случас ЧП, всс три двигателя самолста нс
+отключались одновременно. Перед вылетом ТУ, как и
+положено по инструкции, проверяли. Технические службы не
+нашли причин не выпускать самолет В рейс.
+```
+
+Running that on tickers, we get:
+![Result](7.jpeg)
+
+```markdown
+слгдітвиг попросило пгрдлшьігдст упюкдгвд до 15 Апгтй? пгісс-ату—жй
+```
+
+There are few errors but that is because of low quality of this image. Since we having working OCR for Russian Language, we will now integrate into CCExtractor.
+
+Until Then,
+Cheers!!!!
+
