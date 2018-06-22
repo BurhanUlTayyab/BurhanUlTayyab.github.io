@@ -153,7 +153,9 @@ The following were the results of OCR on a script on Russian Language.
 ```
 
 Running that on tickers, we get:
-![Result](7.jpeg)
+![Result]
+
+(7.jpeg)
 
 ```markdown
 слгдітвиг попросило пгрдлшьігдст упюкдгвд до 15 Апгтй? пгісс-ату—жй
