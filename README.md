@@ -166,3 +166,21 @@ There are few errors but that is because of low quality of this image. Since we 
 Until Then,
 Cheers!!!!
 
+## Google Summer of Code 2018 — Week 6
+
+This blogs tells my work and progress at the end of week 6. So week 5 ended with configuring Tesseract OCR for Russian Language. Week 6 started with the goal in mind that now we have to integrate all of our existing algorithms in CCExtractor. For that we have to first read the frames in FFMPEG, since OPENCV is not supported in CCExtractor. Since working in C is quite fun, I started to read the FFMPEG documentation and started to work on it. I also have reused the previous work done by my mentor Abhinav Shukla in CCExtractor previous year. After some time, I was able to read RGB Frames using FFMPEG. Next, I had to do the basic pre-processing to extract the tickers out of the frames. Unlike before, we used hardcoded parameters to extract the tickers, I found a method implemented by mentor which checks every pixel in a frame and if that pixel is greater than threshold, it becomes White, otherwise it becomes black, re adjusting the parameters, we get a pretty awesome image here
+
+![Result](7.jpeg)
+
+Next, we run the Tesseract OCR onto it and we get the results:
+
+```markdown
+(“ОДИН )КСТРЕНАПЬНЫЕ КОЛОДА В (ТОПИЧlНОН РЕГИОНЕ ОКТУПАЮТ (“от
+ст н—А * 7 ‹ ^ .
+```
+
+The results are pretty convincing considering the fact that it is a low resolution image, we have to now work on correcting the results a little more and handling frames (implementing of Scrolling Ticker Algorithm and Late Fusion).
+
+Until Then
+
+Cheers!!!!
