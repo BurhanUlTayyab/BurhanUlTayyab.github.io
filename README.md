@@ -213,7 +213,7 @@ Here the stoppers are of blue color, we detect the blue stoppers by getting the 
 
 The results are pretty good, the small errors are due to bad quality of the images. This way we get pretty good results from Early Fusion (Scrolling Ticker Algorithm)
 
-# Late Fusion Algorithm:
+Late Fusion Algorithm:
 
 In late fusion algorithm, we check the repetition of the words in incoming frames. I have put a threshold of a least 5 words, meaning if 5 words are repeated then that means that they are the same words from last frame and need to be skipped. It is quite efficient than early fusion algorithm but is quite slow and thus is used for post processing.
 
