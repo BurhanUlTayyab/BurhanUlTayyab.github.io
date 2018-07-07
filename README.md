@@ -184,3 +184,37 @@ The results are pretty convincing considering the fact that it is a low resoluti
 Until Then
 
 Cheers!!!!
+
+## Google Summer of Code 2018 — Week 6 & 7
+
+This blog tells us of my work done during Week 7 and 8. During my 2nd week, I’ve implemented Scrolling Ticker Algorithm in Python with OPENCV. Scrolling Ticker Algorithm is as follows:
+
+![Screenshot](1.png)
+
+The challenge was to implement in C without OPENCV and using just Leptonica. I used FFMPEG to read the frames from the video, next I found a good workaround done by my mentor Abhinav Shukla when he was working with CCExtractor. He proposed that the RGB Colors of individual pixels of the frame be converted CIE-LAB color space to get the Luminance. If Luminance is greater than a threshold (taken as 85) then all of the pixels are converted into White (255) otherwise it is converted into Black (0). Next we use necessary steps to create to do the threshold to the image. The following is the end result
+
+![Screenshot](8.jpeg)
+
+Since, the result is quite good, we then manually define a bounding box to cut the image. The result would be
+
+![Screenshot](9.jpeg)
+
+The original image would look something like this:
+
+![Screenshot](10.jpeg)
+
+Here the stoppers are of blue color, we detect the blue stoppers by getting the RGB color of each pixel and if stopper is present, then it checks for the next stopper (until then frames are skipped), when the next stopper arrives, we define that whole stream as single ticker and save it and run the Tesseract Russian OCR onto it, the end result for thresholded image would be:
+
+![Screenshot](11.jpeg)
+
+```markdown
+слгдітвиг попросило пгрдлшьігдст упюкдгвд до 15 Апгтй? пгісс-ату—жй
+```
+
+The results are pretty good, the small errors are due to bad quality of the images. This way we get pretty good results from Early Fusion (Scrolling Ticker Algorithm)
+
+# Late Fusion Algorithm:
+
+In late fusion algorithm, we check the repetition of the words in incoming frames. I have put a threshold of a least 5 words, meaning if 5 words are repeated then that means that they are the same words from last frame and need to be skipped. It is quite efficient than early fusion algorithm but is quite slow and thus is used for post processing.
+
+
