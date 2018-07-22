@@ -185,7 +185,7 @@ Until Then
 
 Cheers!!!!
 
-## Google Summer of Code 2018 — Week 6 & 7
+## Google Summer of Code 2018 — Week 7 & 8
 
 This blog tells us of my work done during Week 7 and 8. During my 2nd week, I’ve implemented Scrolling Ticker Algorithm in Python with OPENCV. Scrolling Ticker Algorithm is as follows:
 
@@ -216,5 +216,43 @@ The results are pretty good, the small errors are due to bad quality of the imag
 Late Fusion Algorithm:
 
 In late fusion algorithm, we check the repetition of the words in incoming frames. I have put a threshold of a least 5 words, meaning if 5 words are repeated then that means that they are the same words from last frame and need to be skipped. It is quite efficient than early fusion algorithm but is quite slow and thus is used for post processing.
+
+
+## Google Summer of Code 2018 — Week 9 & 10
+
+This blog tells about the work I’ve done during my 10th week, so after passing the second phase of GSoC’18 during the 9th week, I started to work on integrating the stitching algorithm into the main code, this was quite a challenge because the main code needed to changed in order for stitching algorithm to fit onto that correctly. This is because the stitching algorithm just takes the two images given previously by Scrolling Ticker Algorithm and stitches them, since scrolling ticker algorithm checks for the stoppers in a ticker, it doesn’t care if the stopper is occurring in the middle, it just sends the data to the stitching algorithm.
+
+So, a new change was introduced to avoid the duplication done by scrolling ticker algorithm, which was checking that if the last second frame is equal to current frame, we neglect that.
+
+This way we ensure, that we get the perfect tickers to stitch.
+
+Here are some the results
+
+![Screenshot](im1610.jpg)
+
+![Screenshot](im2070.jpg)
+
+![Screenshot](im2530.jpg)
+
+![Screenshot](im2990.jpg)
+
+![Screenshot](im3450.jpg)
+
+
+There seems to be a problem in the last result but it is not, since we are working of find unique tickers, the last ticker is the continuation of second last ticker and it is unique so we can count that.
+
+Since, I’ve integrated it onto the main code, now I have to integrate that into CCExtractor code
+
+Until then
+Cheers
+
+
+
+
+
+
+
+
+
 
 
